@@ -22,7 +22,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
           {t('Главная страница')}
         </AppLink>
         <AppLink
-          theme={AppLinkTheme.SECONDARY}
+          theme={AppLinkTheme.RED}
           to="/about"
         >
           {t('О нас')}

@@ -15,7 +15,6 @@ interface InputProps extends HTMLInputProps {
 
 export const Input: FC<InputProps> = memo((props) => {
   const {
-    // eslint-disable-next-line react/prop-types
     className, value, onChange, type = 'text', placeholder, autoFocus, ...otherProps
   } = props;
 

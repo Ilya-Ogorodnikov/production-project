@@ -1,12 +1,32 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" },
-    { "id": "2", "title": "json-server 1", "author": "typicode" },
-    { "id": "3", "title": "json-server 2", "author": "typicode" },
-    { "id": "4", "title": "json-server 3", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 3",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
     {
@@ -19,10 +39,10 @@
     "first": "Илья",
     "lastname": "Огородников",
     "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
+    "currency": "EUR",
+    "country": "Belarus",
     "city": "Moscow",
     "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/3b/27/2b2758ad5492a76b578f7ee072e4e894.jpg"
+    "avatar": "https://e-news.su/uploads/posts/2022-04/1650919998_d091d18bd181d182d180d0bed0b2_d0a5d0b0d0bad0b5d180.jpeg"
   }
 }

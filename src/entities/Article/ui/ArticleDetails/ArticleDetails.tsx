@@ -16,10 +16,10 @@ import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/art
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleBYId } from '../../model/services/fetchArticleById/fetchArticleById';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
-import cls from './ArticleDetails.module.scss';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   id: string;
@@ -31,7 +31,7 @@ const reducers: ReducerList = {
 
 export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   const { id } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-details');
 
   const dispatch = useAppDispatch();
 
@@ -91,7 +91,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   } else if (error) {
     content = (
       <Text
-        title={t('Произошла ошибка при заргрузке статьи')}
+        title={t('Произошла ошибка при загрузке статьи')}
         align={TextAlign.CENTER}
       />
     );

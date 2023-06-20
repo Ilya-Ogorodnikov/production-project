@@ -112,7 +112,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         />
         <Input
           value={data?.username}
-          placeholder={t('Введите имя пользователя')}
+          placeholder={t('Имя пользователя')}
           className={cls.input}
           onChange={onChangeUsername}
           readonly={readonly}

@@ -24,7 +24,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
   const { className, article, view } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
 
   const navigate = useNavigate();
 

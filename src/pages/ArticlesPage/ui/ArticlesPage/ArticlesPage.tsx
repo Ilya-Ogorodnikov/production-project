@@ -7,12 +7,10 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList';
+import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
-import {
-  getArticlesPageIsLoading, getArticlesPageView, getArticlesPageError, getArticlesPageNum, getArticlesPageHasMore,
-} from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
   className?: string;
@@ -29,9 +27,6 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
-  const error = useSelector(getArticlesPageError);
-  const page = useSelector(getArticlesPageNum);
-  const hasMore = useSelector(getArticlesPageHasMore);
 
   const handleChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
@@ -42,10 +37,7 @@ const ArticlesPage: FC<ArticlesPageProps> = memo((props) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   return (

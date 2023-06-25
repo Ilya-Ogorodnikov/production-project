@@ -10,6 +10,7 @@ import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { UISchema } from 'features/UI';
 
 export interface CounterState {
   value: number;
@@ -18,6 +19,7 @@ export interface CounterState {
 export interface StateSchema {
   // counter: CounterState;
   user: UserSchema;
+  ui: UISchema;
 
   // Асинхронные редьюсеры
   loginForm?: LoginSchema;

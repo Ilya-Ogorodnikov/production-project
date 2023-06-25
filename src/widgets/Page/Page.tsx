@@ -36,13 +36,6 @@ export const Page: FC<PageProps> = memo((props) => {
     wrapperRef.current.scrollTop = scrollPosition;
   });
 
-  // const handleScroll = (event: UIEvent<HTMLDivElement>) => {
-  //   dispatch(uiActions.setScrollPosition({
-  //     position: event.currentTarget.scrollTop,
-  //     path: pathname,
-  //   }));
-  // };
-
   const handleScroll = useThrottle((event: UIEvent<HTMLDivElement>) => {
     dispatch(uiActions.setScrollPosition({
       position: event.currentTarget.scrollTop,
